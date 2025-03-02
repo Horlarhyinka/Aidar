@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, VStack, Image, Text, Button} from "@chakra-ui/react"
 import ReportedIcn from '../assets/svg/verified.svg'
 import BotIcn from '../assets/svg/bot.svg'

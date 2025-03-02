@@ -6,5 +6,7 @@ export const dummyUser = {
     email: 'johhanestest@codeborne.essay',
     skill: 'Pediatrician',
     _id: '0000',
-    telephone: '(+234)-906-5445-036'
+    telephone: '(+234)-906-5445-036',
+    firstName: 'Test',
+    lastName: 'User'
 }

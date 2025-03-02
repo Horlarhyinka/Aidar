@@ -63,7 +63,7 @@ class CustomAudioPlayer extends Component<CustomAudioPlayerProps, CustomAudioPla
 
   render() {
     const { src } = this.props;
-    const { isPlaying, currentTime, duration } = this.state;
+    const { isPlaying } = this.state;
 
     return (
       <VStack align={'left'} bg='white' color={'gray.200'} px='34px' rounded={8} py='12px'>
@@ -81,6 +81,7 @@ class CustomAudioPlayer extends Component<CustomAudioPlayerProps, CustomAudioPla
           <audio ref={this.audioRef} src={src} />
 
           {/* React Waves */}
+          {/* //@ts-expect-error "Just expect error" */}
           <ReactWaves
             audioFile={src}
             className={"react-waves"}

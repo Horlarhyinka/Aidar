@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {  HStack, VStack, Text, Button, Image, Avatar, Box, FormLabel, Input, Circle } from "@chakra-ui/react"
 import SideBar from "../components/utils/sidebar"
 import Title from "../components/utils/title"
@@ -6,23 +8,24 @@ import editIcon from '../assets/svg/edit.svg'
 import dummyEmergencies from "../assets/data/emergencies"
 import EmergencyCard from "../components/emmergency-card"
 import { useEffect, useState } from "react"
-import { getToken, getUser } from "../utils/factory"
-import { useNavigate, useParams } from "react-router-dom"
+import {  getToken, getUser } from "../utils/factory"
+import { useParams } from "react-router-dom"
 import axios from "axios"
+import { authRequest } from "../components/utils/factory"
 
 const Profile = () =>{
     const apiBaseUrl = import.meta.env.VITE_APP_API_BASE_URL
-    const navigate = useNavigate()
     const [userData, setUserData] = useState<typeof dummyUser>()
     const {id} = useParams()
     const user = getUser()
 
     const [emergencies, setEmergencies] = useState<typeof dummyEmergencies>([])
     const [editMode, setEditMode] = useState<boolean>(false)
-    const [firstName, setFirstName] = useState<string>(userData?.firstName)
-    const [lastName, setLastName] = useState<string>(userData?.lastName)
-    const [telephone, setTelephone] = useState<string>(userData?.telephone)
-    const [avatar, setAvatar] = useState<string>(userData?.avatar ?? '')
+    const [firstName, setFirstName] = useState<string>(userData?.firstName ?? '')
+    const [lastName, setLastName] = useState<string>(userData?.lastName ?? '')
+    const [telephone, setTelephone] = useState<string>(userData?.telephone ?? '')
+    const [avatar, _] = useState<string>(userData?.avatar ?? '')
+    const [refetch, setRefetch] = useState(false)
 
     useEffect(()=>{
         axios.get(apiBaseUrl + '/users/'+id)
@@ -33,7 +36,7 @@ const Profile = () =>{
         }).catch(err=>{
             console.log({err})
         })
-    },[apiBaseUrl, id])
+    },[apiBaseUrl, id, refetch])
 
     useEffect(()=>{
         const url = `${apiBaseUrl}/emergencies?userId=${id}`
@@ -46,7 +49,8 @@ const Profile = () =>{
     }, [apiBaseUrl, id])
 
     async function handleUpdate() {
-        const update = await axios.put(`${apiBaseUrl}/users/${id}`, {firstName: firstName ?? userData?.firstName, lastName: lastName ?? userData?.lastName, telephone: telephone ?? userData?.telephone})
+        await authRequest(()=>axios.put(`${apiBaseUrl}/users/${id}`, {firstName: firstName ?? userData?.firstName, lastName: lastName ?? userData?.lastName, telephone: telephone ?? userData?.telephone}, {headers: {'Authorization': `Bearer ${getToken()}`}}))
+        setRefetch(!refetch)
     }
 
 

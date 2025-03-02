@@ -1,4 +1,4 @@
-import { BoxProps, Box, useDisclosure , Modal, ModalBody, ModalHeader, ModalContent, ModalOverlay, Button, VStack, FormControl, FormLabel, Input, Textarea, HStack, Image, Text} from "@chakra-ui/react";
+import { BoxProps, Box, useDisclosure , Modal, ModalBody, ModalHeader, ModalContent, ModalOverlay, Button, VStack, Image, Text} from "@chakra-ui/react";
 import ReportedIcn from '../../assets/svg/verified.svg'
 
 

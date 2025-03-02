@@ -1,5 +1,4 @@
 import { StackProps, VStack , HStack, Text, Avatar} from "@chakra-ui/react"
-import { useState } from "react";
 import ImageGrid from "./photo-grid";
 interface Prop extends StackProps{
     avatar?: string;
