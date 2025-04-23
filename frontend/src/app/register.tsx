@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, FormControl, Heading, HStack, Input, Stack, Text, VStack, Image, Button, Checkbox, FormLabel, } from "@chakra-ui/react"
-import logo from '../assets/svg/logo.svg'
-import auth_banner from '../assets/svg/auth_banner.svg'
-import fileLogo from '../assets/svg/file.svg'
+import logo from '/assets/svg/logo.svg'
+import auth_banner from '/assets/svg/auth_banner.svg'
+import fileLogo from '/assets/svg/file.svg'
 import Select from 'react-select'
 import { skillOptions } from "../constants/options"
 import toast from "react-hot-toast"

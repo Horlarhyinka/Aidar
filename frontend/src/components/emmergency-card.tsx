@@ -1,6 +1,6 @@
 import { Button, HStack, StackProps, VStack, Text, Avatar, Image } from "@chakra-ui/react"
-import onSceneIcn from '../assets/svg/on-scene.svg'
-import messageIcn from '../assets/svg/message.svg'
+import onSceneIcn from '/assets/svg/on-scene.svg'
+import messageIcn from '/assets/svg/message.svg'
 import { useNavigate } from "react-router-dom";
 
 interface Prop extends StackProps{

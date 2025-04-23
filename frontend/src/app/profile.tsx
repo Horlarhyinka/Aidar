@@ -1,17 +1,16 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {  HStack, VStack, Text, Button, Image, Avatar, Box, FormLabel, Input, Circle } from "@chakra-ui/react"
 import SideBar from "../components/utils/sidebar"
 import Title from "../components/utils/title"
 import { dummyUser } from "../assets/data/user"
-import editIcon from '../assets/svg/edit.svg'
+import editIcon from '/assets/svg/edit.svg'
 import dummyEmergencies from "../assets/data/emergencies"
 import EmergencyCard from "../components/emmergency-card"
 import { useEffect, useState } from "react"
-import {  getToken, getUser } from "../utils/factory"
+import { getUser } from "../utils/factory"
 import { useParams } from "react-router-dom"
 import axios from "axios"
-import { authRequest } from "../components/utils/factory"
+import uploader from "../utils/uploader"
 
 const Profile = () =>{
     const apiBaseUrl = import.meta.env.VITE_APP_API_BASE_URL
@@ -24,8 +23,7 @@ const Profile = () =>{
     const [firstName, setFirstName] = useState<string>(userData?.firstName ?? '')
     const [lastName, setLastName] = useState<string>(userData?.lastName ?? '')
     const [telephone, setTelephone] = useState<string>(userData?.telephone ?? '')
-    const [avatar, _] = useState<string>(userData?.avatar ?? '')
-    const [refetch, setRefetch] = useState(false)
+    const [avatar, setAvatar] = useState<string>(userData?.avatar ?? '')
 
     useEffect(()=>{
         axios.get(apiBaseUrl + '/users/'+id)
@@ -36,7 +34,7 @@ const Profile = () =>{
         }).catch(err=>{
             console.log({err})
         })
-    },[apiBaseUrl, id, refetch])
+    },[apiBaseUrl, id])
 
     useEffect(()=>{
         const url = `${apiBaseUrl}/emergencies?userId=${id}`
@@ -49,8 +47,7 @@ const Profile = () =>{
     }, [apiBaseUrl, id])
 
     async function handleUpdate() {
-        await authRequest(()=>axios.put(`${apiBaseUrl}/users/${id}`, {firstName: firstName ?? userData?.firstName, lastName: lastName ?? userData?.lastName, telephone: telephone ?? userData?.telephone}, {headers: {'Authorization': `Bearer ${getToken()}`}}))
-        setRefetch(!refetch)
+        await axios.put(`${apiBaseUrl}/users/${id}`, {firstName: firstName ?? userData?.firstName, lastName: lastName ?? userData?.lastName, telephone: telephone ?? userData?.telephone})
     }
 
 
@@ -86,7 +83,10 @@ const Profile = () =>{
     <Text fontSize={'20px'} fontWeight={600} color={'gray.200'} >Edit Profile</Text>
     <VStack align={'left'} >
     <Box pos={'relative'} >
-    <Input hidden={true} name="avatar" id="avatar" type="file" />
+    <Input hidden={true} name="avatar" id="avatar" type="file" onChange={async(e)=>{
+        const res = await uploader.uploadFiles(Array.from(e.target.files ?? []))
+        setAvatar(res[0])
+    }} />
     <Avatar name={userData && userData?.firstName + ' ' + userData?.lastName} size={'lg'} src={avatar ?? userData?.avatar} />
     <FormLabel htmlFor="avatar" >
         <Circle pos={'absolute'} bottom={'0px'} cursor={'pointer'} left={-1} display={'inline-block'} p={1} bg={'white'} ><Image src={editIcon} alt='' /></Circle>

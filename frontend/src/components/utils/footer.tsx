@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       <HStack className="justify-between" py="8" px="16" alignItems="start">
         <Stack>
-          <Image src="src/assets/logo.svg" alt="Logo"/>
+          <Image src="/assets/logo.svg" alt="Logo"/>
           <Text>Saving lives</Text>
         </Stack>
         <Stack gap="4">
@@ -26,14 +26,14 @@ const Footer = () => {
           <Text fontWeight="600">Get Free Updates & Services</Text>
           <HStack gap="0">
           <Input placeholder="Enter Email" borderRight="0" focusBorderColor="transparent"></Input>
-          <Button bg="gray.200" borderLeft="0" className="relative right-2"><Image src="src/assets/img/send.png"/></Button>
+          <Button bg="gray.200" borderLeft="0" className="relative right-2"><Image src="sr/assets/img/send.png"/></Button>
           </HStack> 
           <HStack p="2">
-            <Image src="src/assets/img/instagram.png" alt="instagram"/>
-            <Image src="src/assets/img/facebook.png" alt="facebook"/>
-            <Image src="src/assets/img/twitter.png" alt="twitter"/>
-            <Image src="src/assets/img/whatsapp.png" alt="whatsapp"/>
-            <Image src="src/assets/img/linkedin.png" alt="linkedin"/>
+            <Image src="/assets/img/instagram.png" alt="instagram"/>
+            <Image src="/assets/img/facebook.png" alt="facebook"/>
+            <Image src="/assets/img/twitter.png" alt="twitter"/>
+            <Image src="/assets/img/whatsapp.png" alt="whatsapp"/>
+            <Image src="/assets/img/linkedin.png" alt="linkedin"/>
           </HStack>
         </Stack>
       </HStack>

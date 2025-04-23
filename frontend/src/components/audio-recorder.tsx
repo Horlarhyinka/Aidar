@@ -1,9 +1,8 @@
 import { Circle, HStack, Image, StackProps, Text } from "@chakra-ui/react";
-import MicIcon from "../assets/svg/mic.svg";
+import MicIcon from "/assets/svg/mic.svg";
 import { useState, useRef } from "react";
 
 interface Prop extends StackProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   setAudio: (blob: Blob) => void;
   onStop?: (blob: Blob) => void
 }

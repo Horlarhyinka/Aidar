@@ -69,7 +69,7 @@ const Features = () => {
                 alignSelf="center"
                 gap="2"
               >
-                Learn More <Image src="src/assets/img/arrow.png" alt="arrow" />
+                Learn More <Image src="/assets/img/arrow.png" alt="arrow" />
               </Button>
             </Stack>
           </Box>

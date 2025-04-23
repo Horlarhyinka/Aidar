@@ -1,8 +1,8 @@
-import { Box, Circle, HStack, Image, Text, VStack } from '@chakra-ui/react';
-import React, { Component, createRef } from 'react';
-import pauseIcn from '../assets/svg/pause.svg';
-import playIcn from '../assets/svg/play.svg';
-import ReactWaves from "@dschoon/react-waves";
+import { Circle, HStack, Image, Text, VStack } from '@chakra-ui/react';
+import { Component, createRef } from 'react';
+import pauseIcn from '/assets/svg/pause.svg';
+import playIcn from '/assets/svg/play.svg';
+import ReactWaves from '@dschoon/react-waves';
 
 interface CustomAudioPlayerProps {
   src: string;
@@ -61,9 +61,10 @@ class CustomAudioPlayer extends Component<CustomAudioPlayerProps, CustomAudioPla
     }
   };
 
+
   render() {
     const { src } = this.props;
-    const { isPlaying } = this.state;
+    const { isPlaying} = this.state;
 
     return (
       <VStack align={'left'} bg='white' color={'gray.200'} px='34px' rounded={8} py='12px'>
@@ -81,7 +82,6 @@ class CustomAudioPlayer extends Component<CustomAudioPlayerProps, CustomAudioPla
           <audio ref={this.audioRef} src={src} />
 
           {/* React Waves */}
-          {/* //@ts-expect-error "Just expect error" */}
           <ReactWaves
             audioFile={src}
             className={"react-waves"}

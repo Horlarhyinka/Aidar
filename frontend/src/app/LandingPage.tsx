@@ -9,10 +9,10 @@ import {
   Heading,
   Box
 } from "@chakra-ui/react";
-import vector from "../assets/img/vector.png";
-import aid from "../assets/img/aid.png";
-import star from "../assets/img/star.png";
-import aiders from "../assets/img/rafiki.png";
+import vector from "/assets/img/vector.png";
+import aid from "/assets/img/aid.png";
+import star from "/assets/img/star.png";
+import aiders from "/assets/img/rafiki.png";
 import HowItWorks from "../components/howItWorks";
 import Features from "../components/features";
 import Testimonials from "../components/testimonial";
@@ -29,7 +29,7 @@ const LandingPage = () => {
       <section className="px-14 border-b-2 shadow-md border-white">
         <Header />
       </section>
-      <section className="">
+      <section id="home">
         <Center>
           <HStack py="8">
             <Image src={vector} alt="vector" mb="8" px-2 />
@@ -81,13 +81,13 @@ const LandingPage = () => {
         </HStack>
         <Stack bg="secondary.200">
           <Image
-            src="src/assets/img/border.png"
+            src="/assets/img/border.png"
             width="100%"
             className="relative bottom-2"
           />
           <Center>
             <Image
-              src="src/assets/img/Supporters.png"
+              src="/assets/img/Supporters.png"
               width="70%"
               className="relative top-16"
             />
@@ -95,8 +95,8 @@ const LandingPage = () => {
         </Stack>
       </section>
 
-      <section>
-        <Image src="src/assets/img/Exclude.png" width="100%" className="" />
+      <section id="howItWorks">
+        <Image src="/assets/img/Exclude.png" width="100%" className="" />
         <Stack py="8" className="">
           <HowItWorks />
         </Stack>
@@ -106,7 +106,7 @@ const LandingPage = () => {
         <Center py="16">
           <HStack>
             <Stack w="48">
-              <Image src="src/assets/img/Icon.png" alt="step-1" py="4" />
+              <Image src="/assets/img/Icon.png" alt="step-1" py="4" />
               <Text fontWeight="600" fontSize="22">
                 Step 1
               </Text>
@@ -115,24 +115,24 @@ const LandingPage = () => {
               </Text>
             </Stack>
             <Image
-              src="src/assets/img/line.png"
+              src="/assets/img/line.png"
               alt="line"
               className="relative bottom-14"
             />
             <Stack w="48">
-              <Image src="src/assets/img/Icon1.png" alt="step-2" py="2" />
+              <Image src="/assets/img/Icon1.png" alt="step-2" py="2" />
               <Text fontWeight="600" fontSize="22">
                 Step 2
               </Text>
               <Text color="gray.200">Receive emergency alerts.</Text>
             </Stack>
             <Image
-              src="src/assets/img/line1.png"
+              src="/assets/img/line1.png"
               alt="line"
               className="relative bottom-14"
             />
             <Stack w="48">
-              <Image src="src/assets/img/Icon2.png" alt="step-3" py="2" />
+              <Image src="/assets/img/Icon2.png" alt="step-3" py="2" />
               <Text fontWeight="600" fontSize="22">
                 Step 3{" "}
               </Text>
@@ -143,16 +143,16 @@ const LandingPage = () => {
           </HStack>
         </Center>
       </section>
-      <section className="py-8">
+      <section className="py-8" id="features">
         <Features />
       </section>
-      <section className="py-8 bg-[#2196f3]/5">
+      <section className="py-8 bg-[#2196f3]/5" id="testimonials">
         <Testimonials />
       </section>
       <section className="py-48">
         <Center>
           <HStack className="justify-between  text-start px-8  w-[80%]">
-            <Stack px="4" w="60%">
+            <Stack px="8" w="70%">
               <Text fontWeight="600" fontSize="36">
                 Join Our Community of life-savers today!
               </Text>
@@ -173,7 +173,7 @@ const LandingPage = () => {
 
               </Box>
             </Stack>
-            <Image src="src/assets/img/victim.png" rounded="md" />
+            <Image src="/assets/img/victim.png" rounded="md" />
           </HStack>
         </Center>
       </section>

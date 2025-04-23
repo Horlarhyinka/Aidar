@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-function-type */
 import { StackProps, HStack, Box, Image, Input, Radio, VStack, Text, FormLabel, Spinner } from "@chakra-ui/react";
 import {AttachmentIcon,} from '@chakra-ui/icons'
-import sendIcn from '../assets/svg/send.svg'
-import tagIcn from '../assets/svg/tag.svg'
+import sendIcn from '/assets/svg/send.svg'
+import tagIcn from '/assets/svg/tag.svg'
 import { RefObject, useRef, useState } from "react";
 import ImageGrid from "./photo-grid";
 import uploader from "../utils/uploader";

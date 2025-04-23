@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, VStack, Image, Text, Button} from "@chakra-ui/react"
-import ReportedIcn from '../assets/svg/verified.svg'
-import BotIcn from '../assets/svg/bot.svg'
+import ReportedIcn from '/assets/svg/verified.svg'
+import BotIcn from '/assets/svg/bot.svg'
 import InferenceModal from "../components/modals/inference"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
@@ -10,7 +10,6 @@ import { collection, onSnapshot } from "firebase/firestore"
 
 const ReportSuccessful = () =>{
     const {id} = useParams()
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [messages, setMessages] = useState<any[]>([])
     useEffect(()=>{
         const path = `emergencies/${id}/inference-chats`

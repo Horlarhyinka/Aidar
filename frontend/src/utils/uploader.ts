@@ -1,12 +1,7 @@
 import axios from 'axios'
-import { getFirestoreDB} from '../config/firebase.config';
 import { initializeApp } from 'firebase/app';
 import { getStorage, ref, uploadBytes  } from 'firebase/storage';
-import {getWaveBlob} from 'webm-to-wav-converter'
 import { firebaseConfig } from '../config/config';
-import st from 'firebase/storage'
-
-import * as FFmpeg from '@ffmpeg/ffmpeg';
 
 
 
@@ -56,7 +51,7 @@ class Uploader{
         const fileName = `${Math.floor(Math.random() * (10 ** 8))}.webm`
         try{
         const fileRef = ref(storage, fileName)
-        const file = new File([blob], fileName, {type: blob.type, lastModified: new Date().getTime()});
+        new File([blob], fileName, {type: blob.type, lastModified: new Date().getTime()});
 
         const uploadRes = await uploadBytes(fileRef, blob,)      
         console.log({uploadRes})  
@@ -87,7 +82,7 @@ export const uploadAudioBlob = async (audioBlob: Blob) => {
         });
         console.log('Audio upload res',{response})
         // Return the secure URL of the uploaded audio
-        return response.data.secure_url;
+        return (response as { data: { secure_url: string} }).data.secure_url;
     } catch (error) {
         console.error('Error uploading audio blob:', error);
         throw error;

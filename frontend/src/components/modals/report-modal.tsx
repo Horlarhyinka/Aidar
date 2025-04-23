@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { BoxProps, Spinner, Box, useDisclosure , Modal, ModalBody, ModalHeader, ModalContent, ModalOverlay, Button, VStack, FormControl, FormLabel, Input, Textarea, HStack, Image, Text} from "@chakra-ui/react";
-import fileLogo from '../../assets/svg/file.svg'
+import fileLogo from '/assets/svg/file.svg'
 import { Map } from "../map";
 import AudioRecorder from "../audio-recorder";
 import { useState } from "react";

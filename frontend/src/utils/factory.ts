@@ -1,3 +1,13 @@
+
+
+import TimeAgo from 'javascript-time-ago'
+
+// English.
+import en from 'javascript-time-ago/locale/en'
+import { tokenName } from '../components/utils/factory'
+
+
+
 export const getUser = ()=>{
     const raw = localStorage.getItem('user')
     if(!raw)return
@@ -33,13 +43,6 @@ export const formatDate = (t: string)=>{
     return formattedDate
 }
 
-
-
-import TimeAgo from 'javascript-time-ago'
-
-// English.
-import en from 'javascript-time-ago/locale/en'
-import { tokenName } from '../components/utils/factory'
 
 TimeAgo.addDefaultLocale(en)
 

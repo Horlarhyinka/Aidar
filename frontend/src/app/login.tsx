@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, FormControl, Heading, HStack, Input, Text, VStack, Image, Button, } from "@chakra-ui/react"
-import logo from '../assets/svg/logo.svg'
-import auth_banner from '../assets/svg/auth_banner.svg'
+import logo from '/assets/svg/logo.svg'
+import auth_banner from '/assets/svg/auth_banner.svg'
 import { RefObject, useRef} from "react"
 import toast from "react-hot-toast"
 import axios from 'axios'

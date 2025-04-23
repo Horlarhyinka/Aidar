@@ -37,7 +37,7 @@ export const Map = (props: Prop)=>{
             })
             setMarkers(markersList)
         }
-    }, [mapRef, props.points, props.target])
+    }, [mapRef, props.points, props.target, mapsRef, markers, props.center])
 
     return <MapComponent 
         center={{lng: props.center.lng, lat: props.center.lat}}

@@ -1,13 +1,13 @@
 import { VStack, Image, Box } from "@chakra-ui/react"
-import Logo from '../../assets/img/Logo.png'
-import documentationNavIcn from '../../assets/svg/nav/documentation.svg'
-import emergencyNavIcn from '../../assets/svg/nav/emergencies.svg'
-import learningNavIcn from '../../assets/svg/nav/learning.svg'
-import rewardsNavIcn from '../../assets/svg/nav/reward.svg'
+import Logo from '/assets/img/Logo.png'
+import documentationNavIcn from '/assets/svg/nav/documentation.svg'
+import emergencyNavIcn from '/assets/svg/nav/emergencies.svg'
+import learningNavIcn from '/assets/svg/nav/learning.svg'
+import rewardsNavIcn from '/assets/svg/nav/reward.svg'
 import MenuItem from "./menu-item"
-import settingsNavIcn from '../../assets/svg/nav/setting.svg'
-import helpNavIcn from '../../assets/svg/nav/help.svg'
-import reportNavIcn from '../../assets/svg/nav/report.svg'
+import settingsNavIcn from '/assets/svg/nav/setting.svg'
+import helpNavIcn from '/assets/svg/nav/help.svg'
+import reportNavIcn from '/assets/svg/nav/report.svg'
 import NavProfile from "./nav-profile"
 
 

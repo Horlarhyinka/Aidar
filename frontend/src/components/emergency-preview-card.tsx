@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { StackProps, VStack, Text, HStack, Circle, 
     // Avatar, 
     Image, 
@@ -41,12 +39,12 @@ const EmergencyPreviewCard = (prop: Prop) =>{
         const tId = toast.loading('Joining emergency room...')
         try{
             const url = `${apiBaseUrl}/emergencies/${id}/responders`
-            const res = await authRequest(()=>axios.post(url, {}, {headers: {'Authorization': `Bearer ${getToken()}`}}))
+            await authRequest(()=>axios.post(url, {}, {headers: {'Authorization': `Bearer ${getToken()}`}}))
             toast.success('You are now a responder for this emergency, GOODLUCK!!', {id: tId})
             navigate('/emergencies/'+id+'/room')
         }catch(err: unknown){
             console.log(err)
-            toast.error((err as any)?.response?.data?.message ?? 'Error occured')
+            toast.error((err as {response: {data: {message: string}}})?.response?.data?.message ?? 'Error occured')
 
         }finally{
             setLoading(false)

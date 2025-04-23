@@ -1,5 +1,5 @@
 import { HStack, Image, Text, Button, StackProps, Box } from "@chakra-ui/react"
-import logo from '../../assets/logo.svg'
+import logo from '/assets/logo.svg'
 import { getFromStorage } from "../../utils/factory"
 import { getAuthToken, getUser, logout } from "./factory"
 import { useNavigate } from "react-router-dom"
